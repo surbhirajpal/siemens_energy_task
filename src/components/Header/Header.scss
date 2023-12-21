@@ -1,0 +1,39 @@
+@import '../../styles/global.scss';
+
+.header{
+    background-color: $primary-color;
+
+    &__content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 100px;
+    }
+
+    &__left-content{
+        width: 100px;
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__right-content{
+        display: flex;
+        align-items: center;
+
+        img{
+            width: 50px;
+            height: auto;
+            border-radius: 50%;
+        }
+    }
+
+    &__username{
+        color: #fff;
+        margin-left: 20px;
+    }
+
+}

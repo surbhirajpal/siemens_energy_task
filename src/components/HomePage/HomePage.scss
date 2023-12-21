@@ -1,3 +1,108 @@
-.homepage{
-    color: red;
+@import '../../styles/global.scss';
+
+.home{
+    padding-top: 30px;
+
+    &__table{
+        margin-top: 80px;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    table, tr{
+        border: 1px solid $background-color;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+    thead th {
+        padding: 25px;
+        font-size: 20px;
+        color: $purple-light;
+    }
+
+    tbody tr th{
+        font-weight: 100;
+    }
+
+    tbody th{
+        padding: 15px 25px;
+    }
+
+    &__table{
+        &-name{
+            width: 25%;
+        }
+        &-action{
+            width: 30%;
+        }
+    }
+
+    &__modify-roles{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: #8e8e8e;
+
+        &:hover{
+            text-decoration: underline;
+        }
+
+        img{
+            width: 25px;
+            height: auto;
+        }
+
+        p{
+            margin-left: 20px;
+        }
+    }
+
+    &__role-name{
+        font-size: 18px;
+    }
+
+    &__role{
+        margin-right: 20px;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 18px;
+
+        &[id = 'Read Data']{
+            background-color: $purple-light;
+        }
+
+        &[id = 'Write Data']{
+            background-color: $green-color;
+        }
+
+        &[id = 'Delete Data']{
+            background-color: $primary-color;
+        }
+    }
+
+    &__checkbox-wrapper{
+        margin-bottom: 8px;
+        &:last-of-type{
+            margin-bottom: 0px;
+        }
+    }
+
+    &__checkbox{
+        accent-color: $purple-light;
+    }
+
+    &__permission{
+        
+        &-button{
+            background-color: $secondary-color;
+            padding: 8px 16px;
+            color: #fff;
+            border-radius: 30px;
+            border: none;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    }
+
 }

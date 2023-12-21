@@ -1,0 +1,13 @@
+@import './variables.scss';
+
+body{
+    background-color: $background-color;
+    margin: 0;
+    font-family: 'circular';
+    font-size: 16px;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
