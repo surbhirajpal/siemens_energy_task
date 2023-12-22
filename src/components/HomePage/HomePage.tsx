@@ -4,7 +4,6 @@ import DemoPermissions from '../../data/demoPermissions.json';
 import DemoRoles from '../../data/demoRoles.json';
 
 import {
-    PermissionProps,
     PermissionsFromCheckBox
 } from '../../types/demoPermissions.types';
 import { RolesProps } from '../../types/demoRoles.types';
@@ -22,7 +21,6 @@ const HomePage = () => {
 
     //STATES
     const [roles, setRoles] = useState<RolesProps>(DemoRoles);
-    const [permissions, setPermissions] = useState<PermissionProps>(DemoPermissions);
     const [permissionsFromCheckbox, setPermissionFromCheckBox] = useState<PermissionsFromCheckBox>(checkboxPermission);
     const [showModifyIndex, setShowModifyIndex] = useState<number | null>(null);
 
@@ -33,7 +31,7 @@ const HomePage = () => {
         const roleIndex = dummyRoles.findIndex((role) => role.name === roleName);
         dummyRoles[roleIndex].permissions = [];
         rolePermissions.map((rolePermission, index) => {
-            const selectedPermission = permissions.find((p) => p.name === rolePermission);
+            const selectedPermission = DemoPermissions.find((p) => p.name === rolePermission);
             if (selectedPermission) {
                 dummyRoles[roleIndex].permissions[index] = selectedPermission;
             }
@@ -103,7 +101,7 @@ const HomePage = () => {
                                                 <p>{'Modify Permissions'}</p>
                                             </div>
                                             <div className={`home__permission-form`}
-                                            style={{ display: showModifyIndex === index ? 'block' : 'none' }}
+                                                style={{ display: showModifyIndex === index ? 'block' : 'none' }}
                                             >
                                                 {
                                                     DemoPermissions.map((permission) => {
@@ -113,8 +111,13 @@ const HomePage = () => {
                                                                     className='home__checkbox'
                                                                     onChange={(event) => handleCheckBoxClick(role.name, permission.name, event?.target.checked)}
                                                                     type='checkbox'
+                                                                    id={`${permission.name}_${role.name}`}
                                                                 />
-                                                                <label>{permission.name}</label>
+                                                                <label
+                                                                    htmlFor={`${permission.name}_${role.name}`}
+                                                                >
+                                                                    {permission.name}
+                                                                </label>
                                                             </div>
                                                         )
                                                     })
