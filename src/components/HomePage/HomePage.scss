@@ -19,6 +19,15 @@
         padding: 25px;
         font-size: 20px;
         color: $purple-light;
+
+        @media (max-width:920px){
+            font-size: 18px;
+            padding: 25px 10px;
+        }
+
+        @media (max-width:768px) {
+            font-size: 14px;
+        }
     }
 
     tbody tr th{
@@ -27,11 +36,19 @@
 
     tbody th{
         padding: 15px 25px;
+
+        @media (max-width:920px){
+            padding: 10px; 
+        }
     }
 
     &__table{
         &-name{
             width: 25%;
+            @media (max-width:920px){
+                width: 20%;
+            }
+
         }
         &-action{
             width: 30%;
@@ -51,15 +68,35 @@
         img{
             width: 25px;
             height: auto;
+
+            @media (max-width:768px){
+                width: 18px;
+            }
         }
 
         p{
             margin-left: 20px;
         }
+
+        @media (max-width:768px){
+            p{
+                font-size: 14px;
+                margin-left: 10px 
+            }
+        }
     }
 
     &__role-name{
         font-size: 18px;
+
+        @media (max-width:768px){
+            font-size: 14px;
+        }
+    }
+
+    &__role-wrapper{
+        display: flex;
+        flex-flow: wrap;
     }
 
     &__role{
@@ -67,6 +104,17 @@
         color: #fff;
         padding: 5px 10px;
         border-radius: 18px;
+        white-space: nowrap;
+
+        &:last-of-type{
+            margin-right: 0;
+        }
+
+        @media (max-width:768px){
+            font-size: 14px;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
 
         &[id = 'Read Data']{
             background-color: $purple-light;
@@ -86,6 +134,10 @@
         &:last-of-type{
             margin-bottom: 0px;
         }
+
+        @media (max-width:768px){
+            font-size: 14px;
+        }
     }
 
     &__checkbox{
@@ -93,7 +145,7 @@
     }
 
     &__permission{
-        
+
         &-button{
             background-color: $secondary-color;
             padding: 8px 16px;
@@ -102,6 +154,12 @@
             border: none;
             margin-top: 20px;
             font-size: 16px;
+
+            @media (max-width:768px){
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+
         }
     }
 

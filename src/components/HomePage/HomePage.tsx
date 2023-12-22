@@ -77,7 +77,7 @@ const HomePage = () => {
                                 return (
                                     <tr key={index}>
                                         <th className='home__role-name'>{role.name}</th>
-                                        <th>
+                                        <th className='home__role-wrapper'>
                                             {role.permissions?.map((permission, index2) => {
                                                 return (
                                                     <span
