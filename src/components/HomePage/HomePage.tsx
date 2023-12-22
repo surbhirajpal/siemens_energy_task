@@ -49,7 +49,7 @@ const HomePage = () => {
             //if checked, add it in the list
             dummyPermission[roleName][dummyPermission[roleName].length] = permissionName;
         } else {
-            //if already exist, remove from the list
+            //if unchecked, remove from the list
             const updatedPermission: string[] = dummyPermission[roleName].filter((p) => p !== permissionName);
             dummyPermission[roleName] = updatedPermission;
         }
